@@ -46,4 +46,14 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($password);
     }
+
+    /**
+     * The roles that belong to the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function todos(): BelongsToMany
+    {
+        return $this->hasMany(todos::class);
+    }
 }

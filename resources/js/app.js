@@ -1,3 +1,6 @@
 require("./bootstrap");
-const Turbolinks = require("turbolinks");
-Turbolinks.start();
+const turbolinks = require("turbolinks");
+turbolinks.start();
+document.addEventListener("turbolinks:load", function (event) {
+    window.livewire.restart();
+});
